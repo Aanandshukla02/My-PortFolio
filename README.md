@@ -4,7 +4,7 @@ Welcome to my personal portfolio!
 This website is a reflection of my journey as a **Software Developer**, showcasing projects, skills, and experiences that highlight my passion for building scalable, efficient, and user-friendly web applications.  
 
 ## 🌐 Live Website  
-[Visit My Portfolio](https://your-portfolio.onrender.com/](https://anand-shukla.onrender.com))  
+[🔗 Visit My Portfolio](https://anand-shukla.onrender.com)  
 
 ## ✨ Highlights  
 - 📂 **Projects** – A curated collection of applications and solutions demonstrating problem-solving, creativity, and technical expertise.  
@@ -20,7 +20,8 @@ This website is a reflection of my journey as a **Software Developer**, showcasi
 ## 📬 Let’s Connect  
 - 💼 [LinkedIn](https://www.linkedin.com/in/ananadshukla05/)  
 - 🖥️ [GitHub](https://github.com/Aanandshukla02)  
-- 📧 Email: aanandd9076@gmail.com  
+- 📧 **Email:** aanandd9076@gmail.com  
 
 ---
+
 ⭐️ Built with passion & dedication by **Aanand**

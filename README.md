@@ -1,16 +1,16 @@
 # 🚀 Aanand's Portfolio  
 
 Welcome to my personal portfolio!  
-This website is a showcase of my projects, skills, and experiences as a passionate **Software Developer**, focused on building scalable, efficient, and visually engaging web applications.  
+This website is a reflection of my journey as a **Software Developer**, showcasing projects, skills, and experiences that highlight my passion for building scalable, efficient, and user-friendly web applications.  
 
 ## 🌐 Live Website  
 [Visit My Portfolio](https://your-portfolio.onrender.com/)  
 
 ## ✨ Highlights  
-- 🎯 **Projects** – A collection of my featured technical work.  
-- 💼 **Experience** – My journey, learnings, and contributions in the world of tech.  
-- 🛠️ **Skills** – Tools, frameworks, and technologies I work with.  
-- 📩 **Contact** – Easy ways to connect and collaborate.  
+- 📂 **Projects** – A curated collection of applications and solutions demonstrating problem-solving, creativity, and technical expertise.  
+- 💼 **Experience** – Hands-on exposure to modern web development practices, collaborative workflows, and continuous learning.  
+- 🛠️ **Skills** – Strong foundation in frontend technologies with a focus on building responsive, scalable, and user-centric applications.  
+- 🤝 **Collaboration** – Open to connecting, contributing, and working on innovative ideas that make an impact.  
 
 ## ⚙️ Tech Stack  
 - **Frontend:** React, Vite, Tailwind CSS  

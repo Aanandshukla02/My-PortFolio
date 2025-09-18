@@ -26,8 +26,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-gray-900/95 backdrop-blur-md">
-      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-auto">
+    <header className="fixed top-0 left-0 w-full z-50 bg-gray-900/95 backdrop-blur-md py-3">
+      <div className="flex justify-center">
         <div className="p-[2px] rounded-full bg-gradient-to-r from-emerald-400 via-cyan-500 to-indigo-500 animate-gradient-x">
           <nav className="bg-gray-900/90 backdrop-blur-md rounded-full px-3 sm:px-6 py-1.5 sm:py-2.5">
             
@@ -35,7 +35,7 @@ export default function Header() {
             <div className="flex items-center gap-1 sm:gap-2 
                             overflow-x-auto 
                             scrollbar-hide
-                            justify-center md:justify-between lg:justify-center
+                            justify-center
                             w-full sm:w-auto">
               {navLinks.map(({ id, icon: Icon, text, path }) => (
                 <Link
@@ -78,7 +78,6 @@ export default function Header() {
           animation: gradient-x 3s linear infinite;
           background-size: 200% 200%;
         }
-        /* ✅ Tablet pe scrollbars ko hide karna */
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }

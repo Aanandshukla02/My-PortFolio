@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   FaHome,
   FaLaptopCode,
@@ -30,7 +30,13 @@ export default function Header() {
       <div className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] sm:w-auto">
         <div className="p-[2px] rounded-full bg-gradient-to-r from-emerald-400 via-cyan-500 to-indigo-500 animate-gradient-x">
           <nav className="bg-gray-900/90 backdrop-blur-md rounded-full px-3 sm:px-6 py-1.5 sm:py-2.5">
-            <div className="flex flex-wrap justify-center items-center gap-1 sm:gap-2">
+            
+            {/* ✅ Responsive nav wrapper */}
+            <div className="flex items-center gap-1 sm:gap-2 
+                            overflow-x-auto 
+                            scrollbar-hide
+                            justify-center md:justify-between lg:justify-center
+                            w-full sm:w-auto">
               {navLinks.map(({ id, icon: Icon, text, path }) => (
                 <Link
                   key={id}
@@ -71,6 +77,14 @@ export default function Header() {
         .animate-gradient-x {
           animation: gradient-x 3s linear infinite;
           background-size: 200% 200%;
+        }
+        /* ✅ Tablet pe scrollbars ko hide karna */
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </header>

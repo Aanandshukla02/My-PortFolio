@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Send, Phone, MapPin, Mail, Linkedin, Github } from "lucide-react";
 
 export default function Contact() {
@@ -52,7 +52,7 @@ export default function Contact() {
     }
 
     const form = new FormData();
-    form.append("access_key", "f94db06b-b8c1-42b1-b610-48429b0adf32"); // ✅ आपका नया Access Key
+    form.append("access_key", "f94db06b-b8c1-42b1-b610-48429b0adf32");
     form.append("name", formData.name);
     form.append("email", formData.email);
     form.append("subject", formData.subject || "New Contact Form Submission");
@@ -85,7 +85,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="pt-20 lg:pt-[0rem] bg-[#04081A] text-white min-h-screen">
+    <main className="pt-28 bg-[#04081A] text-white min-h-screen">
       <section className="hero min-h-screen flex items-center relative px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">

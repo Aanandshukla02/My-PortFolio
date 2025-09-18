@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaHome,
   FaLaptopCode,
@@ -16,6 +16,11 @@ export default function Header() {
     return path;
   });
 
+  useEffect(() => {
+    const path = location.pathname.substring(1) || "home";
+    setActiveLink(path);
+  }, [location.pathname]);
+
   const navLinks = [
     { id: "home", icon: FaHome, text: "Home", path: "/" },
     { id: "skills", icon: FaCode, text: "Skills", path: "/skills" },
@@ -27,24 +32,24 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-gray-900/95 backdrop-blur-md py-3">
-      <div className="flex justify-center">
-        <div className="p-[2px] rounded-full bg-gradient-to-r from-emerald-400 via-cyan-500 to-indigo-500 animate-gradient-x">
-          <nav className="bg-gray-900/90 backdrop-blur-md rounded-full px-3 sm:px-6 py-1.5 sm:py-2.5">
-            
-            {/* ✅ Responsive nav wrapper */}
-            <div className="flex items-center gap-1 sm:gap-2 
-                            overflow-x-auto 
-                            scrollbar-hide
-                            justify-center
-                            w-full sm:w-auto">
+      <div className="flex justify-center px-2 sm:px-6">
+        <div className="p-[2px] rounded-full bg-gradient-to-r from-emerald-400 via-cyan-500 to-indigo-500 animate-gradient-x w-full max-w-[900px]">
+          <nav className="bg-gray-900/90 backdrop-blur-md rounded-full px-2 sm:px-6 py-1.5 sm:py-2.5">
+            <div
+              className="flex items-center justify-between gap-2
+                         overflow-x-auto sm:overflow-x-visible
+                         scrollbar-hide
+                         w-full"
+            >
               {navLinks.map(({ id, icon: Icon, text, path }) => (
                 <Link
                   key={id}
                   to={path}
                   onClick={() => setActiveLink(id)}
-                  className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium
-                    transition-all duration-300 flex items-center gap-1 sm:gap-2
-                    hover:bg-white/10 
+                  className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full
+                    font-medium
+                    transition-all duration-300
+                    hover:bg-white/10
                     ${
                       activeLink === id
                         ? "bg-white/15 text-white"
@@ -53,11 +58,22 @@ export default function Header() {
                   `}
                 >
                   <Icon
-                    className={`text-sm sm:text-base ${
+                    className={`text-base sm:text-lg ${
                       activeLink === id ? "scale-110" : ""
                     }`}
                   />
-                  <span>{text}</span>
+                  {/* Responsive & scalable text */}
+                  <span
+                    className={`${
+                      activeLink === id ? "inline" : "hidden sm:inline"
+                    }`}
+                    style={{
+                      fontSize: "clamp(0.65rem, 1.5vw, 0.9rem)", // small on mobile, normal on larger
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {text}
+                  </span>
                 </Link>
               ))}
             </div>
@@ -67,12 +83,8 @@ export default function Header() {
 
       <style>{`
         @keyframes gradient-x {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
         }
         .animate-gradient-x {
           animation: gradient-x 3s linear infinite;

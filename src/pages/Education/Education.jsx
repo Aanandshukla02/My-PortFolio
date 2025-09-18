@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  Calendar,
-  BookOpen,
-} from "lucide-react";
+import { Calendar, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 
 const EducationSection = () => {
@@ -21,8 +18,7 @@ const EducationSection = () => {
     {
       type: "school10",
       degree: "Secondary School Certificate (Class X)",
-      school:
-        "SMT D Singh, Doorwani Nagar, Naini, Prayagraj, Uttar Pradesh",
+      school: "SMT D Singh, Doorwani Nagar, Naini, Prayagraj, Uttar Pradesh",
       mascot: "📘",
       year: "2020",
       description: "Completed Class 10th with strong academic foundation.",
@@ -30,8 +26,7 @@ const EducationSection = () => {
     {
       type: "school12",
       degree: "Senior School Certificate (Class XII)",
-      school:
-        "SMT D Singh, Doorwani Nagar, Naini, Prayagraj, Uttar Pradesh",
+      school: "SMT D Singh, Doorwani Nagar, Naini, Prayagraj, Uttar Pradesh",
       mascot: "📗",
       year: "2022",
       description: "Completed Class 12th in Science Stream.",
@@ -42,9 +37,7 @@ const EducationSection = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.2 },
     },
   };
 
@@ -53,10 +46,7 @@ const EducationSection = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -92,14 +82,14 @@ const EducationSection = () => {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
         >
-          {/* College Card (Center Top) */}
+          {/* College Card */}
           <motion.div
             variants={cardVariants}
             className={`relative md:col-span-2 border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
               hoveredIndex === 0
                 ? "border-teal-500 scale-[1.02]"
                 : "border-blue-400/20"
-            }`}
+            } order-1 md:order-1`} // 👈 Mobile me pehla, desktop me same
             onMouseEnter={() => setHoveredIndex(0)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
@@ -124,46 +114,14 @@ const EducationSection = () => {
             </div>
           </motion.div>
 
-          {/* 10th Card (Left Side) */}
-          <motion.div
-            variants={cardVariants}
-            className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
-              hoveredIndex === 1
-                ? "border-teal-500 scale-[1.02]"
-                : "border-blue-400/20"
-            }`}
-            onMouseEnter={() => setHoveredIndex(1)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <span className="text-3xl">{educationData[1].mascot}</span>
-                <h3 className="text-xl font-bold text-white">
-                  {educationData[1].degree}
-                </h3>
-              </div>
-              <p className="text-lg text-gray-300 flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-teal-500" />
-                {educationData[1].school}
-              </p>
-              <p className="text-gray-400 flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                {educationData[1].year}
-              </p>
-              <p className="text-gray-300 text-sm italic border-l-2 border-teal-500 pl-3">
-                {educationData[1].description}
-              </p>
-            </div>
-          </motion.div>
-
-          {/* 12th Card (Right Side) */}
+          {/* 12th Card */}
           <motion.div
             variants={cardVariants}
             className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
               hoveredIndex === 2
                 ? "border-teal-500 scale-[1.02]"
                 : "border-blue-400/20"
-            }`}
+            } order-2 md:order-3`} // 👈 Mobile me dusra, desktop me right
             onMouseEnter={() => setHoveredIndex(2)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
@@ -184,6 +142,38 @@ const EducationSection = () => {
               </p>
               <p className="text-gray-300 text-sm italic border-l-2 border-teal-500 pl-3">
                 {educationData[2].description}
+              </p>
+            </div>
+          </motion.div>
+
+          {/* 10th Card */}
+          <motion.div
+            variants={cardVariants}
+            className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
+              hoveredIndex === 1
+                ? "border-teal-500 scale-[1.02]"
+                : "border-blue-400/20"
+            } order-3 md:order-2`} // 👈 Mobile me last, desktop me left
+            onMouseEnter={() => setHoveredIndex(1)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">{educationData[1].mascot}</span>
+                <h3 className="text-xl font-bold text-white">
+                  {educationData[1].degree}
+                </h3>
+              </div>
+              <p className="text-lg text-gray-300 flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-teal-500" />
+                {educationData[1].school}
+              </p>
+              <p className="text-gray-400 flex items-center gap-2">
+                <Calendar className="w-4 h-4" />
+                {educationData[1].year}
+              </p>
+              <p className="text-gray-300 text-sm italic border-l-2 border-teal-500 pl-3">
+                {educationData[1].description}
               </p>
             </div>
           </motion.div>

@@ -3,7 +3,6 @@ import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
-// ✅ Import images
 import codeSavantImg from "../../assets/images/CodeSavant-AI.png";
 import reserveMateImg from "../../assets/images/Reservemate.png";
 import mealStackImg from "../../assets/images/MealStack.png";
@@ -65,14 +64,9 @@ export default function Projects() {
 
   const [showIndicator, setShowIndicator] = useState(true);
 
-  // ✅ Track scroll progress to hide/show indicator
   useEffect(() => {
     return scrollYProgress.on("change", (latest) => {
-      if (latest >= 0.95) {
-        setShowIndicator(false); // hide at end
-      } else {
-        setShowIndicator(true); // show otherwise
-      }
+      setShowIndicator(latest < 0.95);
     });
   }, [scrollYProgress]);
 
@@ -102,19 +96,26 @@ export default function Projects() {
           })}
         </section>
 
-        {/* 👇 Scroll Down Indicator (hide at last project) */}
+        {/* ✅ Always Centered Scroll Down Indicator */}
         {showIndicator && (
           <motion.div
-            initial={{ y: 0, opacity: 0.6 }}
-            animate={{ y: [0, 10, 0], opacity: [0.6, 1, 0.6] }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 text-white text-sm flex flex-col items-center pointer-events-none z-50"
+            className="
+              fixed bottom-5 inset-x-0
+              flex flex-col items-center justify-center
+              text-white text-sm z-[9999]
+              pointer-events-none select-none
+            "
           >
-            <span className="mb-1">Scroll Down</span>
+            <span className="mb-1 text-xs sm:text-sm opacity-80">
+              Scroll Down
+            </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
+              width="22"
+              height="22"
               fill="none"
               stroke="white"
               strokeWidth="2"
@@ -173,9 +174,9 @@ function Card({
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
       >
-        {/* Split Card */}
+        {/* Card */}
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-xl">
-          {/* Image/Preview */}
+          {/* Image */}
           <div className="w-full md:w-[50%] h-[220px] md:h-[380px] lg:h-[420px] relative overflow-hidden bg-gray-800 flex items-center justify-center text-gray-400 text-sm">
             {src ? (
               <img
@@ -223,19 +224,7 @@ function Card({
                   className="flex items-center gap-2"
                   whileHover={{ y: -3 }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={color}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                  </svg>
+                  <GitHubIcon color={color} />
                   <span className="text-xs md:text-sm">Code</span>
                 </motion.a>
               )}
@@ -248,21 +237,7 @@ function Card({
                   className="flex items-center gap-2"
                   whileHover={{ y: -3 }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={color}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                  </svg>
+                  <LiveIcon color={color} />
                   <span className="text-xs md:text-sm">Live</span>
                 </motion.a>
               )}
@@ -271,5 +246,43 @@ function Card({
         </div>
       </motion.div>
     </div>
+  );
+}
+
+function GitHubIcon({ color }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+    </svg>
+  );
+}
+
+function LiveIcon({ color }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="2" y1="12" x2="22" y2="12"></line>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+    </svg>
   );
 }

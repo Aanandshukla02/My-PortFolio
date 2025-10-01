@@ -7,8 +7,20 @@ import codeSavantImg from "../../assets/images/CodeSavant-AI.png";
 import reserveMateImg from "../../assets/images/Reservemate.png";
 import mealStackImg from "../../assets/images/MealStack.png";
 import hotelApiImg from "../../assets/images/Hotel Booking API.png";
+import svrImg from "../../assets/images/SVR.png"; // Latest project image
 
 const projects = [
+  {
+    title: "Shree Vishwanath Roadways (SVR)",
+    description:
+      "A professional logistics and transport solutions website built for a trusted fleet and transport contractor in India. Features info about services, contact, and company info with responsive design.",
+    src: svrImg,
+    color: "#ffcc00",
+    githubLink: "https://github.com/Aanandshukla02/Shree-Vishwanath-Roadways",
+    liveLink: "https://shree-vishwanath-roadways.onrender.com/",
+    tech: "React.js, Vite, CSS, Node.js (dev environment)",
+    date: "Oct 2025",
+  },
   {
     title: "CodeSavant-AI: AI-Powered Code Reviewer",
     description:
@@ -96,7 +108,6 @@ export default function Projects() {
           })}
         </section>
 
-        {/* ✅ Always Centered Scroll Down Indicator */}
         {showIndicator && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -174,9 +185,7 @@ function Card({
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
       >
-        {/* Card */}
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-xl">
-          {/* Image */}
           <div className="w-full md:w-[50%] h-[220px] md:h-[380px] lg:h-[420px] relative overflow-hidden bg-gray-800 flex items-center justify-center text-gray-400 text-sm">
             {src ? (
               <img
@@ -199,7 +208,6 @@ function Card({
             </div>
           </div>
 
-          {/* Content */}
           <div className="w-full md:w-[50%] p-6 md:p-8 lg:p-10 flex flex-col justify-between">
             <div>
               <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-4">
@@ -214,7 +222,6 @@ function Card({
               <p className="text-xs text-gray-500">{date}</p>
             </div>
 
-            {/* Links */}
             <div className="mt-4 md:mt-auto pt-4 border-t border-gray-700 flex gap-4">
               {githubLink && (
                 <motion.a

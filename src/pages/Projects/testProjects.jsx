@@ -16,7 +16,7 @@ const projects = [
       "A professional logistics and transport solutions website built for a trusted fleet and transport contractor in India. Features info about services, contact, and company info with responsive design.",
     src: svrImg,
     color: "#ffcc00",
-    githubLink: "https://github.com/Aanandshukla02/Shree-Vishwanath-Roadways",
+    githubLink: "",
     liveLink: "https://shree-vishwanath-roadways.onrender.com/",
     tech: "React.js, Vite, CSS, Node.js (dev environment)",
     date: "Oct 2025",

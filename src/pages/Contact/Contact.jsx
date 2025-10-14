@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Send, Phone, MapPin, Mail, Linkedin, Github } from "lucide-react";
 
 export default function Contact() {
@@ -103,6 +103,7 @@ export default function Contact() {
               </div>
 
               <div className="space-y-6">
+                {/* Email */}
                 <div className="flex items-center space-x-4">
                   <div className="bg-purple-500/10 p-3 rounded-lg">
                     <Mail className="w-6 h-6 text-purple-400" />
@@ -111,6 +112,8 @@ export default function Contact() {
                     <h3 className="font-semibold">Email</h3>
                     <a 
                       href="mailto:aanandd9076@gmail.com" 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-400 hover:text-purple-400 transition-colors"
                     >
                       aanandd9076@gmail.com
@@ -118,6 +121,7 @@ export default function Contact() {
                   </div>
                 </div>
 
+                {/* Phone */}
                 <div className="flex items-center space-x-4">
                   <div className="bg-blue-500/10 p-3 rounded-lg">
                     <Phone className="w-6 h-6 text-blue-400" />
@@ -126,6 +130,8 @@ export default function Contact() {
                     <h3 className="font-semibold">Phone</h3>
                     <a 
                       href="tel:+919076823328" 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-400 hover:text-blue-400 transition-colors"
                     >
                       +91-9076823328
@@ -133,6 +139,7 @@ export default function Contact() {
                   </div>
                 </div>
 
+                {/* Location */}
                 <div className="flex items-center space-x-4">
                   <div className="bg-pink-500/10 p-3 rounded-lg">
                     <MapPin className="w-6 h-6 text-pink-400" />
@@ -143,6 +150,7 @@ export default function Contact() {
                   </div>
                 </div>
 
+                {/* LinkedIn */}
                 <div className="flex items-center space-x-4">
                   <div className="bg-indigo-500/10 p-3 rounded-lg">
                     <Linkedin className="w-6 h-6 text-indigo-400" />
@@ -155,11 +163,12 @@ export default function Contact() {
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-indigo-400 transition-colors"
                     >
-                      linkedin.com/in/anand-shukla-5b830a268
+                      linkedin.com/in/ananadshukla05
                     </a>
                   </div>
                 </div>
 
+                {/* GitHub */}
                 <div className="flex items-center space-x-4">
                   <div className="bg-gray-500/10 p-3 rounded-lg">
                     <Github className="w-6 h-6 text-gray-400" />
@@ -172,7 +181,7 @@ export default function Contact() {
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-gray-200 transition-colors"
                     >
-                      github.com/Aanandshukla02
+                      github.com/aanandd02
                     </a>
                   </div>
                 </div>

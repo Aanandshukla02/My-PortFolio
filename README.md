@@ -20,7 +20,7 @@ This website is a reflection of my journey as a **Software Developer**, showcasi
 
 ## 📬 Let’s Connect  
 - 💼 [LinkedIn](https://www.linkedin.com/in/ananadshukla05/)  
-- 🖥️ [GitHub](https://github.com/Aanandshukla02)  
+- 🖥️ [GitHub](https://github.com/aanandd02)  
 - 📧 **Email:** aanandd9076@gmail.com  
 
 ---

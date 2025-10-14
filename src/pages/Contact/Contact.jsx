@@ -150,7 +150,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold">LinkedIn</h3>
                     <a 
-                      href="https://linkedin.com/in/anand-shukla-5b830a268" 
+                      href="https://www.linkedin.com/in/ananadshukla05/"
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-indigo-400 transition-colors"
@@ -167,7 +167,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold">GitHub</h3>
                     <a 
-                      href="https://github.com/Aanandshukla02" 
+                      href="https://github.com/aanandd02" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-gray-200 transition-colors"

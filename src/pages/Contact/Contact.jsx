@@ -158,12 +158,12 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold">LinkedIn</h3>
                     <a 
-                      href="https://www.linkedin.com/in/ananadshukla05/"
+                      href="https://www.linkedin.com/in/aanandd02/"
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-indigo-400 transition-colors"
                     >
-                      linkedin.com/in/ananadshukla05
+                      linkedin.com/in/aanandd02
                     </a>
                   </div>
                 </div>

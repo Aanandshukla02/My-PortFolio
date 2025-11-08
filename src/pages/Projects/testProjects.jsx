@@ -7,9 +7,22 @@ import codeSavantImg from "../../assets/images/CodeSavant-AI.png";
 import reserveMateImg from "../../assets/images/Reservemate.png";
 import mealStackImg from "../../assets/images/MealStack.png";
 import hotelApiImg from "../../assets/images/Hotel Booking API.png";
-import svrImg from "../../assets/images/SVR.png"; // Latest project image
+import svrImg from "../../assets/images/SVR.png"; 
+import mailautoImg from "../../assets/images/ai-email-automation-banner.png";
 
 const projects = [
+  {
+    title: "AI Email Automation",
+    description:
+      "An AI-powered email outreach automation system using Google Gemini AI, Google Sheets API, and Gmail via Nodemailer. It automatically generates personalized backend developer job/internship emails, attaches resume, and updates status in Google Sheet.",
+    src: mailautoImg, 
+    color: "#8a2be2",
+    githubLink: "https://github.com/aanandd02/ai-email-automation",
+    liveLink: "",
+    tech: "Node.js, Express.js, Gemini AI, Google Sheets API, Gmail, HTML, CSS",
+    date: "Nov 2025",
+  },
+
   {
     title: "Shree Vishwanath Roadways (SVR)",
     description:

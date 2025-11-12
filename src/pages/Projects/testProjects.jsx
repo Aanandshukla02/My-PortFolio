@@ -17,7 +17,7 @@ const projects = [
       "An AI-powered email outreach automation system using Google Gemini AI, Google Sheets API, and Gmail via Nodemailer. It automatically generates personalized backend developer job/internship emails, attaches resume, and updates status in Google Sheet.",
     src: mailautoImg, 
     color: "#8a2be2",
-    githubLink: "https://github.com/aanandd02/ai-email-automation",
+    githubLink: "https://github.com/aanandd02/Ai-emails-automation",
     liveLink: "",
     tech: "Node.js, Express.js, Gemini AI, Google Sheets API, Gmail, HTML, CSS",
     date: "Nov 2025",
